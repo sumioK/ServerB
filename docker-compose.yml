@@ -8,3 +8,11 @@ services:
             - '.:/ServerB'
         tty: true
         stdin_open: true
+        depends_on:
+            - selenium_chrome
+    selenium_chrome:
+        image: selenium/standalone-chrome-debug
+        logging:
+            driver: none
+        ports:
+            - 4444:4444
