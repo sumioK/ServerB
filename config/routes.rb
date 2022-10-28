@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   get "posts/show" => "posts#show"
 
   get "users/new" => "users#new"
-  post "posts/create" => "posts#create"
+  post "users/create" => "users#create"
 end

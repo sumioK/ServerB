@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    @user = User.find(params[:id])
   end
   
   def create
@@ -15,16 +14,16 @@ class UsersController < ApplicationController
       redirect_to("/posts/index")
     elsif params[:name].blank? 
       flash[:alert] = "ユーザー名を登録してください"
-      redirect_to("/signup")
+      redirect_to("/users/new")
     elsif params[:email].blank?
       flash[:alert] = "メールアドレスを登録してください"
-      redirect_to("/signup")
+      redirect_to("/users/new")
     elsif params[:password].blank?
       flash[:alert] = "パスワードを登録してください"
-      redirect_to("/signup")
+      redirect_to("/users/new")
     elsif params[:password] != params[:password2]
       flash[:alert] = "パスワードとパスワード確認が一致しません"
-      redirect_to("/signup")
+      redirect_to("/users/new")
     end
     @user.save
   end
@@ -38,7 +37,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "ログインに成功しました"
       redirect_to("/posts/index")
-    elsif @user!
+    elsif !@user
       flash[:alert] = "メールアドレスが間違っています"
       render("login_form")
     elsif @user.password != params[:password]

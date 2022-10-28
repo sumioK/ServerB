@@ -1,0 +1,11 @@
+<%= form_with url: "/users/create" do |f| %>
+  <%= f.label :名前 %>
+  <%= f.text_field :name %>
+  <%= f.label :メールアドレス %>
+  <%= f.text_field :email %>
+  <%= f.label :パスワード %>
+  <%= f.text_field :password %>
+  <%= f.label :確認用パスワード %>
+  <%= f.text_field :password2 %>
+  <%= f.submit :登録%>
+<% end %>
