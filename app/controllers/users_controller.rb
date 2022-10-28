@@ -22,7 +22,10 @@ class UsersController < ApplicationController
       flash[:alert] = "パスワードを登録してください"
       redirect_to("/users/new")
     elsif params[:password] != params[:password2]
-      flash[:alert] = "パスワードとパスワード確認が一致しません"
+      flash[:alert] = "パスワードと確認用パスワードが一致しません"
+      redirect_to("/users/new")
+    else
+      flash[:alert] = "メールアドレスが無効です"
       redirect_to("/users/new")
     end
     @user.save
@@ -44,5 +47,11 @@ class UsersController < ApplicationController
       flash[:alert] = "パスワードが間違っています"
       render("login_form")
     end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトに成功しました"
+    redirect_to("/")
   end
 end

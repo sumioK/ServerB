@@ -1,11 +1,18 @@
-<%= form_with url: "/users/create" do |f| %>
-  <%= f.label :名前 %>
-  <%= f.text_field :name %>
-  <%= f.label :メールアドレス %>
-  <%= f.text_field :email %>
-  <%= f.label :パスワード %>
-  <%= f.text_field :password %>
-  <%= f.label :確認用パスワード %>
-  <%= f.text_field :password2 %>
-  <%= f.submit :登録%>
-<% end %>
+
+<div class="signup-container">
+  <%= form_with url: "/users/create" do |f| %>
+    <%= f.label :名前 %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :メールアドレス %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :確認用パスワード %>
+    <%= f.password_field :password2 %>
+    <br>
+    <%= f.submit :登録%>
+  <% end %>
+</div>
