@@ -1,0 +1,16 @@
+.flash{
+  .success{
+      background-color: #a1fcfc;
+      width: 100%;
+      text-align: center;
+      height: 30px;
+      position: fixed;
+  }
+  .alert{
+      position: fixed;
+      background-color: rgb(252, 138, 138);
+      text-align: center;
+      height: 30px;
+      width: 100%;
+  }
+}
