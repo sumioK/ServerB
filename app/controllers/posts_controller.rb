@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_current_user
+  before_action :authenticate_user,{only: [:new, :create, :destroy]}
   def new
-    @post = Post.find(params[:id])
   end
 
   def create

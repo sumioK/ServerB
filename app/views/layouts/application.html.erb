@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
+    <header>
+    <%= link_to "ServerB", "/posts/index", {class: "title"} %>
+    <div class="header-icons">
+      <%= link_to "投稿一覧", "/posts/index" %>
+      <% if !@current_user %>
+        <%= link_to "新規登録", "/signup" %>
+        <%= link_to "ログイン", "/login" %>
+      <% end %>
+      <% if @current_user %>
+        <%= link_to "新規投稿", "/posts/new" %>
+        <%= button_to "ログアウト", "/logout" %>
+        <% end %>
+    </div>
+    </header>
     <div class="flash">
       <% if flash[:notice] %>
         <div class="success">
-            <p><%= flash[:notice] %></p>
+          <p><%= flash[:notice] %></p>
         </div>
       <% elsif flash[:alert] %>
         <div class="alert">

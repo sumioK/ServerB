@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_current_user
+  before_action :forbid_login_user,{only:[:new, :create, :login, :login_form]}
+
   def new
   end
   

@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   get "posts/new" => "posts#new"
   get "posts/show" => "posts#show"
 
-  get "users/new" => "users#new"
-  get "users/login_form" => "users#login_form"
-  post "users/create" => "users#create"
-  post "users/login" => "users#login"
+  post "/signup" => "users#create"
+  get "/signup" => "users#new"
+  get "/login" => "users#login_form"
+  post "/login" => "users#login"
+  post "/logout" => "users#logout"
 end
