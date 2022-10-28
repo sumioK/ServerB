@@ -1,0 +1,11 @@
+<div class="login-form">
+  <%= form_with url:"/users/login" do |f| %>
+    <%= f.label :メールアドレス %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :パスワード %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit :ログイン%>
+  <% end %>
+</div>

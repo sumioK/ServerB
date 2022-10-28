@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "posts/show" => "posts#show"
 
   get "users/new" => "users#new"
+  get "users/login_form" => "users#login_form"
   post "users/create" => "users#create"
+  post "users/login" => "users#login"
 end
