@@ -1,24 +1,22 @@
-# README
+# ServerB課題
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+### バージョン情報
+* ruby:3.1.2  
+* Rails:7.0.4  
+* sqlite3:1.4  
+* RSpec:3.12.0  
+* selenium-webdriber:4.5.0
 
-* Ruby version
+### テスト
+* model spec
+* system spec
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 起動方法
+1. git cloneでソースコードをローカルに保存してください  
+2. docker-compose build コマンドでコンテナを作成してください  
+3. docker-compose up -dコマンドでコンテナをdaemonモードで起動してください  
+4. docker-compose exec web bashコマンドでコンテナ内に移動してください
+5. bundle コマンドでbundleをinstallしてください
+6. rails s -b 0.0.0.0コマンドでサーバーを起動してください

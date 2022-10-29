@@ -1,7 +1,11 @@
-<%= form_with url:"/posts/create" do |f| %>
-  <%= f.label:文章を入力 %>
-  <br>
-  <%= f.text_area:content %>
-  <br>
-  <%= f.submit:投稿 %>
-<% end %>
+<div class="post-form">
+  <%= form_with url:"/posts/create" do |f| %>
+    <%= f.label:文章を入力, class:"form-text" %>
+    <br>
+    <%= f.text_area:content, class:"form-area" %>
+    <br>
+    <div class="button-container">
+      <%= f.submit:投稿,class:"button" %>
+    </div>
+  <% end %>
+</div>

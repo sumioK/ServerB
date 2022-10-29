@@ -1,18 +1,28 @@
 
 <div class="signup-container">
-  <%= form_with url: "/create" do |f| %>
-    <%= f.label :名前 %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :メールアドレス %>
-    <%= f.text_field :email %>
-    <br>
-    <%= f.label :パスワード %>
-    <%= f.password_field :password %>
-    <br>
-    <%= f.label :確認用パスワード %>
-    <%= f.password_field :password2 %>
-    <br>
-    <%= f.submit :登録%>
+  <%= form_with url: "/signup" do |f| %>
+    <div class="signup-content">
+      <%= f.label :名前,class: "signup-label"%>
+      <br>
+      <%= f.text_field :name,class: "signup-area" %>
+    </div>
+    <div class="signup-content">    
+      <%= f.label :メールアドレス,class: "signup-label" %>
+      <br>
+      <%= f.text_field :email,class: "signup-area" %>
+    </div>
+    <div class="signup-content">
+      <%= f.label :パスワード,class: "signup-label" %>
+      <br>
+      <%= f.password_field :password,class: "signup-area" %>
+    </div>
+    <div class="signup-content">
+      <%= f.label :確認用パスワード,class: "signup-label" %>
+      <br>
+      <%= f.password_field :password2,class: "signup-area" %>
+    </div>
+    <div class="button-container">
+      <%= f.submit :登録,class: "button" %>
+    </div>
   <% end %>
 </div>

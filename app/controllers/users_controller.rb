@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_current_user
-  before_action :forbid_login_user,{only:[:new, :create, :login, :login_form]}
+  before_action :forbid_login_user,{only:[:new, :create, :login_form, :signup, :login]}
 
   def new
   end
@@ -17,19 +17,19 @@ class UsersController < ApplicationController
       redirect_to("/posts/index")
     elsif params[:name].blank? 
       flash[:alert] = "ユーザー名を登録してください"
-      redirect_to("/users/new")
+      redirect_to("/signup")
     elsif params[:email].blank?
       flash[:alert] = "メールアドレスを登録してください"
-      redirect_to("/users/new")
+      redirect_to("/signup")
     elsif params[:password].blank?
       flash[:alert] = "パスワードを登録してください"
-      redirect_to("/users/new")
+      redirect_to("/signup")
     elsif params[:password] != params[:password2]
       flash[:alert] = "パスワードと確認用パスワードが一致しません"
-      redirect_to("/users/new")
+      redirect_to("/signup")
     else
       flash[:alert] = "メールアドレスが無効です"
-      redirect_to("/users/new")
+      redirect_to("/signup")
     end
     @user.save
   end
@@ -55,6 +55,6 @@ class UsersController < ApplicationController
   def logout
     session[:user_id] = nil
     flash[:notice] = "ログアウトに成功しました"
-    redirect_to("/")
+    redirect_to("/posts/index")
   end
 end

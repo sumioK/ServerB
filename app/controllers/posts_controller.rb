@@ -10,7 +10,10 @@ class PostsController < ApplicationController
       user_id: @current_user.id
     )
     if @post.save
-      redirect_to('/posts/index')
+      redirect_to("/posts/index")
+    elsif params[:content].blank?
+      flash[:alert] = "文章を入力してください"
+      redirect_to("/posts/new")
     end
   end
 
@@ -18,13 +21,4 @@ class PostsController < ApplicationController
     @posts = Post.all.order(created_at: :desc)
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
-  def destroy
-    @post = Post.fins(params[:id])
-    @post.destroy
-    redirect_to("/posts/index")
-  end
 end

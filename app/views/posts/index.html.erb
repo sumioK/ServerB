@@ -1,3 +1,7 @@
-<% @posts.each do |post| %>
-  <%= post.content %>
-<% end %>
+<div class="posts-container">
+  <% @posts.each do |post| %>
+    <div class="content">
+      <%= post.content %>
+    </div>
+  <% end %>
+</div>

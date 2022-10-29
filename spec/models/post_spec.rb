@@ -5,9 +5,9 @@ RSpec.describe Post, type: :moddel do
   it "投稿ができる" do
     user = User.create(
       id: 5,
-      name: "sample5",
-      email: "sample5@example.com",
-      password: "sample5"
+      name: "sample01",
+      email: "sample01@example.com",
+      password: "sample01"
     )
     post = Post.new(
       user_id: 5,
@@ -19,9 +19,9 @@ RSpec.describe Post, type: :moddel do
   it "コンテンツが空の投稿はできない"do
     user = User.create(
       id: 6,
-      name: "sample6",
-      email: "sample6@example.com",
-      password: "sample6"
+      name: "sample02",
+      email: "sample02@example.com",
+      password: "sample02"
     )
     post = Post.new(
       user_id: 6

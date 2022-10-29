@@ -61,9 +61,62 @@ body{
       }
     }
   }
+
   .signup-container{
-    width: 50%;
+    width: 30%;
     margin:0 auto;
-    padding-top: 200px;
+    padding-top: 100px;
+    .signup-content{
+      margin-bottom: 10px;
+    }
+    .signup-label{
+      font-size: 20px;
+    }
+    .signup-area{
+      width: 100%;
+      font-size: 20px;
+    }
+    .button-container{
+      margin: 0 auto;
+      text-align: center;
+      .button{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 40px;
+        width: 100px;
+      }
+    }
+  }
+
+  .post-form{
+    width: 50%;
+    margin:100px auto;
+    .form-text{
+      font-size: 20px;
+    }
+    .form-area{
+      width: 100%;
+      height:200px;
+      font-size: 20px;
+    }
+    .button-container{
+      margin: 0 auto;
+      text-align: center;
+      .button{
+        margin-top: 10px;
+        font-size: 20px;
+        height: 40px;
+        width: 100px;
+      }
+    }
+  }
+
+  .posts-container{
+    width: 50%;
+    margin:40px auto;
+    .content{
+      font-size: 20px;
+      margin-top: 10px;
+    }
   }
 }
