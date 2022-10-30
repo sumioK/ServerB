@@ -14,9 +14,11 @@
 * system spec
 
 ## 起動方法
-1. git cloneでソースコードをローカルに保存してください  
+1. git cloneでソースコードをローカルに保存し、Server_Bディレクトリへ移動してください  
 2. docker-compose build コマンドでコンテナを作成してください  
 3. docker-compose up -dコマンドでコンテナをdaemonモードで起動してください  
 4. docker-compose exec web bashコマンドでコンテナ内に移動してください
 5. bundle コマンドでbundleをinstallしてください
-6. rails s -b 0.0.0.0コマンドでサーバーを起動してください
+6. rails db:migrateでDBをマイグレートしてください
+7. rails s -b 0.0.0.0コマンドでサーバーを起動してください
+8. localhost:3000にアクセスしてください
